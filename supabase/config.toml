@@ -1,0 +1,19 @@
+project_id = "hvtfbmhhpypzzevsladf"
+
+[functions.create-user]
+verify_jwt = true
+
+[functions.send-absence-notifications]
+verify_jwt = false
+
+[functions.submit-attendance]
+verify_jwt = true
+
+[functions.secure-qr-token]
+verify_jwt = true
+
+[functions.secure-admin-operations]
+verify_jwt = true
+
+[functions.secure-image-access]
+verify_jwt = true

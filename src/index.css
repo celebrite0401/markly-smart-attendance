@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Markly Design System - Modern cyan-to-blue gradient theme */
+
+@layer base {
+  :root {
+    /* Core Theme Colors - Markly Cyan-to-Blue Palette */
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    /* Primary - Markly Cyan */
+    --primary: 187 100% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 187 100% 52%;
+
+    /* Secondary - Markly Blue */
+    --secondary: 231 48% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 187 100% 95%;
+    --accent-foreground: 187 100% 42%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-glow: 142 76% 46%;
+
+    --warning: 43 96% 56%;
+    --warning-foreground: 26 83% 14%;
+    --warning-glow: 43 96% 66%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 187 100% 42%;
+
+    --radius: 0.75rem;
+
+    /* Markly Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(187, 100%, 42%), hsl(231, 48%, 48%));
+    --gradient-markly: linear-gradient(135deg, #00BCD4, #3F51B5);
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-warning: linear-gradient(135deg, hsl(var(--warning)), hsl(var(--warning-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 15% 98%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+    --shadow-success: 0 4px 20px -4px hsl(var(--success) / 0.3);
+    --shadow-warning: 0 4px 20px -4px hsl(var(--warning) / 0.3);
+    --shadow-markly: 0 8px 32px -8px rgba(0, 188, 212, 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 187 100% 42%;
+  }
+
+  .dark {
+    /* Dark mode adjustments for Markly theme */
+    --background: 215 28% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 215 28% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 215 28% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 187 100% 52%;
+    --primary-foreground: 215 28% 8%;
+    --primary-glow: 187 100% 62%;
+
+    --secondary: 231 48% 58%;
+    --secondary-foreground: 215 28% 8%;
+
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 187 85% 15%;
+    --accent-foreground: 187 100% 52%;
+
+    --success: 142 76% 46%;
+    --success-glow: 142 76% 56%;
+
+    --warning: 43 96% 66%;
+    --warning-glow: 43 96% 76%;
+
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 187 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom utility classes for Markly */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-markly {
+    background: var(--gradient-markly);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-warning {
+    background: var(--gradient-warning);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-markly {
+    box-shadow: var(--shadow-markly);
+  }
+
+  .shadow-success {
+    box-shadow: var(--shadow-success);
+  }
+
+  .shadow-warning {
+    box-shadow: var(--shadow-warning);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Animation keyframes for Markly system */
+  @keyframes pulse-success {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 hsl(var(--success) / 0.4);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 0 10px hsl(var(--success) / 0);
+    }
+  }
+
+  @keyframes pulse-warning {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 hsl(var(--warning) / 0.4);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 0 10px hsl(var(--warning) / 0);
+    }
+  }
+
+  @keyframes countdown-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-success {
+    animation: pulse-success 2s infinite;
+  }
+
+  .animate-pulse-warning {
+    animation: pulse-warning 2s infinite;
+  }
+
+  .animate-countdown-pulse {
+    animation: countdown-pulse 1s infinite;
+  }
+
+  /* QR Code rotation animation */
+  @keyframes qr-refresh {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(90deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+
+  .animate-qr-refresh {
+    animation: qr-refresh 0.5s ease-in-out;
+  }
+}

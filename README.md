@@ -45,7 +45,7 @@ A secure, fast, and reliable attendance system with face verification, rotating 
 - **Email**: `a@gmail.com`
 - **Password**: `Aditya`
 ### Admin Login
-- **Email**: `admi@smart.com`
+- **Email**: `admin@smart.com`
 - **Password**: `Aditya`
 
 ## 🎮 Quick Demo Flow
